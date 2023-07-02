@@ -29,12 +29,12 @@ if __name__ == "__main__":
     print("[Ezy's Checker] | If you like this please join : discord.gg/meSxCAWXvQ\n")
     webhook_url = input("[Ezy's Checker] | Enter webhook URL (optional): ")
 
-    # Create a session object
+    
     session = tls_client.Session(client_identifier="chrome112")
 
-    # Use ThreadPoolExecutor for concurrent processing
+   
     with concurrent.futures.ThreadPoolExecutor() as executor:
-        # Submit username validations to the executor
+        
         futures = [executor.submit(validate_kick_username, username, webhook_url) for username in usernames]
 
         # Wait for all validations to complete
